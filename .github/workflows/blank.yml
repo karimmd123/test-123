@@ -1,10 +1,20 @@
 name: test-work
 on: workflow_dispatch
 jobs:
-  job-1:
+  build:
    runs-on: ubuntu-latest
    steps:
-     -  run: echo " step1 "
-     -  run: date
-     -  run: hostname
-     - run: free -m
+     - name: test1
+       run: echo " build is running "
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: test2
+        run: echo " test is running "
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: test3
+        run: echo " app is deployed "
+        
+      
